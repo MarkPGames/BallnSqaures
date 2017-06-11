@@ -27,8 +27,7 @@ public:
 	void setLinePos2(Vector2 a_linePos2);
 
 	std::string getType();
-
-
+	const GameObject* getObject();
 
 	virtual void OnCollision(GameObject* a_obj2);
 	void setCollision(bool a_collision);

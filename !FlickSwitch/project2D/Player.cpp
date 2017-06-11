@@ -81,11 +81,11 @@ void Player::update(float deltaTime)
 	m_transform.Translate(velocity);
 
 	
-	system("cls");
-	std::cout << "COLLIDING WITH GROUND: " << collidingWithGround << std::endl;
-	std::cout << "maxSpeedThisFrame " << maxSpeedThisFrame << std::endl;
-	std::cout<< "speed: " << speed << std::endl;
-	std::cout << "vel.y: "<< velocity.y << std::endl;
+	//system("cls");
+	//std::cout << "COLLIDING WITH GROUND: " << collidingWithGround << std::endl;
+	//std::cout << "maxSpeedThisFrame " << maxSpeedThisFrame << std::endl;
+	//std::cout<< "speed: " << speed << std::endl;
+	//std::cout << "vel.y: "<< velocity.y << std::endl;
 
 	collidingWithGround = false;
 }

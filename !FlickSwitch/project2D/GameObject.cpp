@@ -76,6 +76,11 @@ std::string GameObject::getType()
 	return objType;
 }
 
+const GameObject* GameObject::getObject()
+{
+	return this;
+}
+
 void GameObject::OnCollision(GameObject * a_obj2)
 {
 

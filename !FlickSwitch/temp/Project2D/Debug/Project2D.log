@@ -1,2 +1,10 @@
-﻿  Player.cpp
-  Project2D.vcxproj -> C:\Users\s171068\Documents\!FlickSwitch\temp\Project2D\Debug\Project2D.exe
+﻿  Application2D.cpp
+d:\documents\c++\code design\ballnsquaresrepo\!flickswitch\project2d\collisionmanager.h(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+d:\documents\c++\code design\ballnsquaresrepo\!flickswitch\project2d\collisionmanager.h(29): warning C4018: '<': signed/unsigned mismatch
+d:\documents\c++\code design\ballnsquaresrepo\!flickswitch\project2d\collisionmanager.h(32): warning C4018: '<': signed/unsigned mismatch
+d:\documents\c++\code design\ballnsquaresrepo\!flickswitch\project2d\application2d.cpp(64): warning C4018: '<': signed/unsigned mismatch
+d:\documents\c++\code design\ballnsquaresrepo\!flickswitch\project2d\application2d.cpp(89): warning C4018: '<': signed/unsigned mismatch
+d:\documents\c++\code design\ballnsquaresrepo\!flickswitch\project2d\application2d.cpp(111): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\documents\c++\code design\ballnsquaresrepo\!flickswitch\project2d\application2d.cpp(116): warning C4018: '<': signed/unsigned mismatch
+  Project2D.vcxproj -> D:\Documents\C++\Code Design\BallnSquaresRepo\!FlickSwitch\temp\Project2D\Debug\Project2D.exe
+  Project2D.vcxproj -> D:\Documents\C++\Code Design\BallnSquaresRepo\!FlickSwitch\temp\Project2D\Debug\Project2D.pdb (Full PDB)
