@@ -43,17 +43,17 @@ bool Application2D::startup()
 		if (count == 4)
 		{
 			currentBox = boxStart;
-			gameObjArray.Push(new Box(m_boxTexture, Vector2(currentBox->getPosition().x + 4, currentBox->getPosition().y - 400)));
+			gameObjArray.Push(new Box(m_boxTexture, Vector2(currentBox->getPosition().x + 400, currentBox->getPosition().y - 400)));
 		}
 		else
 		{
-			gameObjArray.Push(new Box(m_boxTexture, Vector2(currentBox->getPosition().x / 4, currentBox->getPosition().y - 400)));
+			gameObjArray.Push(new Box(m_boxTexture, Vector2(currentBox->getPosition().x - 400, currentBox->getPosition().y - 400)));
 		}
 
 		count++;
 		currentBox = (Box*)gameObjArray[count]->getObject();
 		
-		gameObjArray.Push(new Box(m_boxTexture, Vector2(currentBox->getPosition().x / 4, currentBox->getPosition().y - 400)));
+		gameObjArray.Push(new Box(m_boxTexture, Vector2(currentBox->getPosition().x - 400, currentBox->getPosition().y - 400)));
 		gameObjArray.Push(new Box(m_boxTexture, Vector2(currentBox->getPosition().x + 400, currentBox->getPosition().y - 400)));
 		count += 2;
 
