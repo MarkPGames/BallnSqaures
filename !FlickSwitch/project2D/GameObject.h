@@ -6,6 +6,14 @@
 #include "Input.h"
 #include "AABB.h"
 
+enum class COLOUR
+{
+	RED,
+	GREEN,
+	BLUE,
+	YELLOW
+};
+
 class GameObject
 {
 public:
@@ -35,6 +43,8 @@ public:
 	float getRadius() const;
 	void setRadius(float a_radius);
 	void setType(std::string a_objType);
+	void SetBoolColour(bool a_boolColour);
+	COLOUR getColour() const;
 
 
 protected:
@@ -42,10 +52,13 @@ protected:
 	Transform m_transform;
 
 	std::string objType;
-	bool collision, hasMoved;
+	bool collision, hasMoved, boolColour;;
 	Vector2 linePos1, linePos2;
 
 	//circle collision
 	float m_radius;
+
+	int colourChoice, colourPrev;
+	COLOUR colour;
 };
 

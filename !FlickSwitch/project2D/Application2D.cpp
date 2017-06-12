@@ -32,6 +32,7 @@ bool Application2D::startup()
 
 	Player* player = new Player(m_playerTexture, Vector2(500, 500));
 	Box* boxStart = new Box(m_boxStartTexture, Vector2(500, 0));
+	boxStart->SetBoolColour(false);
 	Box* currentBox = boxStart;
 
 	gameObjArray.Push(player);

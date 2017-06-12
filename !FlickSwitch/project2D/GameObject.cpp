@@ -1,4 +1,5 @@
 #include "GameObject.h"
+#include <ctime>
 
 GameObject::GameObject()
 {
@@ -16,6 +17,9 @@ GameObject::GameObject(aie::Texture * a_texture, Vector2 a_position)
 	m_radius = (a_texture->getWidth() / 2);
 	objType = "Unknown";
 	collision = false;
+	boolColour = true;
+	srand(unsigned int(time(NULL)));
+	colourChoice = rand() % 4;
 }
 
 
@@ -32,6 +36,14 @@ void GameObject::SetTexture(aie::Texture * a_texture)
 
 bool GameObject::startup()
 {
+	if (boolColour == false)
+	{
+		colourChoice = 5;
+	}
+	else
+	{
+		colourChoice = rand() % 4;
+	}
 	return true;
 }
 
@@ -104,4 +116,14 @@ void GameObject::setRadius(float a_radius)
 void GameObject::setType(std::string a_objType)
 {
 	objType = a_objType;
+}
+
+void GameObject::SetBoolColour(bool a_boolColour)
+{
+	boolColour = a_boolColour;
+}
+
+COLOUR GameObject::getColour() const
+{
+	return COLOUR();
 }

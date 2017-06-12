@@ -1,10 +1,17 @@
-﻿  Application2D.cpp
+﻿  GameObject.cpp
+d:\documents\c++\code design\ballnsquaresrepo\!flickswitch\project2d\gameobject.cpp(17): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+  Application2D.cpp
 d:\documents\c++\code design\ballnsquaresrepo\!flickswitch\project2d\collisionmanager.h(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 d:\documents\c++\code design\ballnsquaresrepo\!flickswitch\project2d\collisionmanager.h(29): warning C4018: '<': signed/unsigned mismatch
 d:\documents\c++\code design\ballnsquaresrepo\!flickswitch\project2d\collisionmanager.h(32): warning C4018: '<': signed/unsigned mismatch
-d:\documents\c++\code design\ballnsquaresrepo\!flickswitch\project2d\application2d.cpp(98): warning C4018: '<': signed/unsigned mismatch
-d:\documents\c++\code design\ballnsquaresrepo\!flickswitch\project2d\application2d.cpp(123): warning C4018: '<': signed/unsigned mismatch
-d:\documents\c++\code design\ballnsquaresrepo\!flickswitch\project2d\application2d.cpp(145): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-d:\documents\c++\code design\ballnsquaresrepo\!flickswitch\project2d\application2d.cpp(150): warning C4018: '<': signed/unsigned mismatch
+d:\documents\c++\code design\ballnsquaresrepo\!flickswitch\project2d\application2d.cpp(99): warning C4018: '<': signed/unsigned mismatch
+d:\documents\c++\code design\ballnsquaresrepo\!flickswitch\project2d\application2d.cpp(124): warning C4018: '<': signed/unsigned mismatch
+d:\documents\c++\code design\ballnsquaresrepo\!flickswitch\project2d\application2d.cpp(146): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+d:\documents\c++\code design\ballnsquaresrepo\!flickswitch\project2d\application2d.cpp(151): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  main.cpp
+  Player.cpp
+  Box.cpp
   Project2D.vcxproj -> D:\Documents\C++\Code Design\BallnSquaresRepo\!FlickSwitch\temp\Project2D\Debug\Project2D.exe
   Project2D.vcxproj -> D:\Documents\C++\Code Design\BallnSquaresRepo\!FlickSwitch\temp\Project2D\Debug\Project2D.pdb (Full PDB)

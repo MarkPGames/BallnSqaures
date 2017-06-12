@@ -30,7 +30,6 @@ bool Player::startup()
 
 void Player::update(float deltaTime)
 {	
-	
 	if (input->wasKeyPressed(aie::INPUT_KEY_A))
 	{
 
@@ -86,6 +85,7 @@ void Player::update(float deltaTime)
 	//std::cout << "maxSpeedThisFrame " << maxSpeedThisFrame << std::endl;
 	//std::cout<< "speed: " << speed << std::endl;
 	//std::cout << "vel.y: "<< velocity.y << std::endl;
+	
 
 	collidingWithGround = false;
 }
