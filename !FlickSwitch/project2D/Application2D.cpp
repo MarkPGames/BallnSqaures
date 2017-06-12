@@ -43,23 +43,57 @@ bool Application2D::startup()
 		if (count == 4)
 		{
 			currentBox = boxStart;
-			gameObjArray.Push(new Box(m_boxTexture, Vector2(currentBox->getPosition().x + 400, currentBox->getPosition().y - 400)));
+			gameObjArray.Push(new Box(m_boxTexture, Vector2(currentBox->getPosition().x + 500, currentBox->getPosition().y - 500)));
 		}
 		else
 		{
-			gameObjArray.Push(new Box(m_boxTexture, Vector2(currentBox->getPosition().x - 400, currentBox->getPosition().y - 400)));
+			gameObjArray.Push(new Box(m_boxTexture, Vector2(currentBox->getPosition().x - 500, currentBox->getPosition().y - 500)));
 		}
 
 		count++;
 		currentBox = (Box*)gameObjArray[count]->getObject();
 		
-		gameObjArray.Push(new Box(m_boxTexture, Vector2(currentBox->getPosition().x - 400, currentBox->getPosition().y - 400)));
-		gameObjArray.Push(new Box(m_boxTexture, Vector2(currentBox->getPosition().x + 400, currentBox->getPosition().y - 400)));
-		count += 2;
-
+		if (count == 5)
+		{
+			gameObjArray.Push(new Box(m_boxTexture, Vector2(currentBox->getPosition().x + 500, currentBox->getPosition().y -500)));
+		}																				 
+		else																			 
+		{																				 
+			gameObjArray.Push(new Box(m_boxTexture, Vector2(currentBox->getPosition().x - 500, currentBox->getPosition().y -500)));
+			gameObjArray.Push(new Box(m_boxTexture, Vector2(currentBox->getPosition().x + 500, currentBox->getPosition().y -500)));
+			count += 2;
+		}
 	}
-	
 
+	count = 4;
+	currentBox = (Box*)gameObjArray[count]->getObject();
+	for (int i = 0; i < 2; i++)
+	{
+		if (count == 7)
+		{
+			currentBox = (Box*)gameObjArray[4]->getObject();
+			gameObjArray.Push(new Box(m_boxTexture, Vector2(currentBox->getPosition().x + 500, currentBox->getPosition().y - 500)));
+			count++;
+			currentBox = (Box*)gameObjArray[10]->getObject();
+		}
+		else
+		{
+			gameObjArray.Push(new Box(m_boxTexture, Vector2(currentBox->getPosition().x - 500, currentBox->getPosition().y - 500)));
+			count++;
+			currentBox = (Box*)gameObjArray[7]->getObject();
+		}
+
+		if (count == 8)
+		{
+			gameObjArray.Push(new Box(m_boxTexture, Vector2(currentBox->getPosition().x + 500, currentBox->getPosition().y - 500)));
+		}
+		else
+		{
+			gameObjArray.Push(new Box(m_boxTexture, Vector2(currentBox->getPosition().x - 500, currentBox->getPosition().y - 500)));
+			gameObjArray.Push(new Box(m_boxTexture, Vector2(currentBox->getPosition().x + 500, currentBox->getPosition().y - 500)));
+			count += 2;
+		}
+	}
 
 	for (int i = 0; i < gameObjArray.getSize(); i++)
 	{

@@ -266,6 +266,11 @@ public:
 		}
 	}
 
+	void SetCapacity(unsigned int a_capacity)
+	{
+		capacity = a_capacity;
+	}
+
 	T& operator[](int a_index)
 	{
 		return data[a_index];
