@@ -32,7 +32,7 @@ bool Application2D::startup()
 
 	Player* player = new Player(m_playerTexture, Vector2(500, 500));
 	Box* boxStart = new Box(m_boxStartTexture, Vector2(500, 0));
-	boxStart->SetBoolColour(false);
+	boxStart->setBoolColour(false);
 	Box* currentBox = boxStart;
 
 	gameObjArray.Push(player);
@@ -139,8 +139,6 @@ void Application2D::update(float deltaTime)
 	
 void Application2D::draw()
 {
-
-	
 	clearScreen();
 
 	m_2dRenderer->setCameraPos(cameraPos.x - getWindowWidth() * 0.5, cameraPos.y - getWindowHeight() * 0.5 - 300);

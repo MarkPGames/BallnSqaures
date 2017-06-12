@@ -20,6 +20,7 @@ GameObject::GameObject(aie::Texture * a_texture, Vector2 a_position)
 	boolColour = true;
 	srand(unsigned int(time(NULL)));
 	colourChoice = rand() % 4;
+	colourPrev = colourChoice;
 }
 
 
@@ -118,12 +119,22 @@ void GameObject::setType(std::string a_objType)
 	objType = a_objType;
 }
 
-void GameObject::SetBoolColour(bool a_boolColour)
+void GameObject::setBoolColour(bool a_boolColour)
 {
 	boolColour = a_boolColour;
 }
 
-COLOUR GameObject::getColour() const
+bool GameObject::getBoolColour()
 {
-	return COLOUR();
+	return boolColour;
+}
+
+COLOUR GameObject::getColour()
+{
+	return colour;
+}
+
+void GameObject::setColour(COLOUR a_COLOUR)
+{
+	colour = a_COLOUR;
 }

@@ -92,15 +92,15 @@ public:
 				{
 					if (obj1->getPosition().y + obj1->getRadius() > obj2->getLinePos1().y)
 					{
+
 						obj1->OnCollision(obj2);
+
 						return true;
 					}
 				}
 
 			}
 		}
-
-		//else if (obj1->getPos)
 		return false;
 	}
 

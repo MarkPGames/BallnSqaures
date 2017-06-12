@@ -43,9 +43,10 @@ public:
 	float getRadius() const;
 	void setRadius(float a_radius);
 	void setType(std::string a_objType);
-	void SetBoolColour(bool a_boolColour);
-	COLOUR getColour() const;
-
+	void setBoolColour(bool a_boolColour);
+	bool getBoolColour();
+	COLOUR getColour();
+	void setColour(COLOUR a_COLOUR);
 
 protected:
 	aie::Texture* m_texture;
