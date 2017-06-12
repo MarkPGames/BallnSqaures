@@ -46,14 +46,16 @@ public:
 	void setBoolColour(bool a_boolColour);
 	bool getBoolColour();
 	COLOUR getColour();
-	void setColour(COLOUR a_COLOUR);
+	void setHasRestart(bool a_hasRestart);
+	bool getHasRestart();
+
 
 protected:
 	aie::Texture* m_texture;
 	Transform m_transform;
 
 	std::string objType;
-	bool collision, hasMoved, boolColour;;
+	bool collision, hasMoved, boolColour, hasRestart;
 	Vector2 linePos1, linePos2;
 
 	//circle collision

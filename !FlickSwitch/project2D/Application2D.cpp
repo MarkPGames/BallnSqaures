@@ -96,7 +96,7 @@ bool Application2D::startup()
 		}
 	}
 
-	for (int i = 0; i < gameObjArray.getSize(); i++)
+	for (unsigned int i = 0; i < gameObjArray.getSize(); i++)
 	{
 		gameObjArray[i]->startup();
 	}
@@ -121,7 +121,7 @@ void Application2D::update(float deltaTime)
 
 	collisionManager->UpdateCollisions();
 
-	for (int i = 0; i < gameObjArray.getSize(); i++)
+	for (unsigned int i = 0; i < gameObjArray.getSize(); i++)
 	{
 		gameObjArray[i]->update(deltaTime);
 	}
@@ -134,6 +134,17 @@ void Application2D::update(float deltaTime)
 		cameraPos += vecBetween * deltaTime * 5.0f;
 	}
 
+	if (gameObjArray[0]->getHasRestart() == true)
+	{
+		for (unsigned int i = 2; i < gameObjArray.getSize(); i++)
+		{
+			gameObjArray[i]->setBoolColour(true);
+			
+		}
+		gameObjArray[0]->setHasRestart(false);
+	}
+
+
 	collisionManager->UpdateCollisions();
 }
 	
@@ -141,12 +152,12 @@ void Application2D::draw()
 {
 	clearScreen();
 
-	m_2dRenderer->setCameraPos(cameraPos.x - getWindowWidth() * 0.5, cameraPos.y - getWindowHeight() * 0.5 - 300);
+	m_2dRenderer->setCameraPos(cameraPos.x - float(getWindowWidth()) * 0.5f, cameraPos.y - float(getWindowHeight()) * 0.5f - 300.0f);
 
 
 	m_2dRenderer->begin();
 
-	for (int i = 0; i < gameObjArray.getSize(); i++)
+	for (unsigned int i = 0; i < gameObjArray.getSize(); i++)
 	{
 		gameObjArray[i]->draw(m_2dRenderer);
 	}

@@ -1,10 +1,15 @@
-﻿  Application2D.cpp
-Application2D.cpp(84): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-Application2D.cpp(85): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-Application2D.cpp(94): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-Application2D.cpp(98): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+﻿  AABB.cpp
+  Application2D.cpp
+  Box.cpp
+  GameObject.cpp
   main.cpp
+  Player.cpp
+  Transform.cpp
   Generating code
-  All 1893 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  All 1974 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
-  Project2D.vcxproj -> C:\Users\s171068\Documents\!FlickSwitch\temp\Project2D\Release\Project2D.exe
+MathLibrary.lib(Vector2.obj) : warning LNK4099: PDB 'UnitTest.pdb' was not found with 'MathLibrary.lib(Vector2.obj)' or at 'D:\Documents\C++\Code Design\BallnSquaresRepo\!FlickSwitch\temp\Project2D\Release\UnitTest.pdb'; linking object as if no debug info
+MathLibrary.lib(Matrix3.obj) : warning LNK4099: PDB 'UnitTest.pdb' was not found with 'MathLibrary.lib(Matrix3.obj)' or at 'D:\Documents\C++\Code Design\BallnSquaresRepo\!FlickSwitch\temp\Project2D\Release\UnitTest.pdb'; linking object as if no debug info
+MathLibrary.lib(Vector3.obj) : warning LNK4099: PDB 'UnitTest.pdb' was not found with 'MathLibrary.lib(Vector3.obj)' or at 'D:\Documents\C++\Code Design\BallnSquaresRepo\!FlickSwitch\temp\Project2D\Release\UnitTest.pdb'; linking object as if no debug info
+  Project2D.vcxproj -> D:\Documents\C++\Code Design\BallnSquaresRepo\!FlickSwitch\temp\Project2D\Release\Project2D.exe
+  Project2D.vcxproj -> D:\Documents\C++\Code Design\BallnSquaresRepo\!FlickSwitch\temp\Project2D\Release\Project2D.pdb (Full PDB)

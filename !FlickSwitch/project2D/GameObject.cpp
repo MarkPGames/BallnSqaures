@@ -14,10 +14,11 @@ GameObject::GameObject(aie::Texture * a_texture, Vector2 a_position)
 {
 	m_transform.SetPosition(a_position);
 	SetTexture(a_texture);
-	m_radius = (a_texture->getWidth() / 2);
+	m_radius = (float(a_texture->getWidth() / 2));
 	objType = "Unknown";
 	collision = false;
 	boolColour = true;
+	hasRestart = false;
 	srand(unsigned int(time(NULL)));
 	colourChoice = rand() % 4;
 	colourPrev = colourChoice;
@@ -134,7 +135,12 @@ COLOUR GameObject::getColour()
 	return colour;
 }
 
-void GameObject::setColour(COLOUR a_COLOUR)
+void GameObject::setHasRestart(bool a_hasRestart)
 {
-	colour = a_COLOUR;
+	hasRestart = a_hasRestart;
+}
+
+bool GameObject::getHasRestart()
+{
+	return hasRestart;
 }

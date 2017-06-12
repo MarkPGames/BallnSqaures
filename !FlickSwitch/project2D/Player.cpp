@@ -32,11 +32,8 @@ void Player::update(float deltaTime)
 {	
 	if (input->wasKeyPressed(aie::INPUT_KEY_A))
 	{
-
 		direction = Vector2(-1.0f, 0.0f);
-	
 	}
-
 
 	if (input->wasKeyPressed(aie::INPUT_KEY_D))
 	{
@@ -71,21 +68,8 @@ void Player::update(float deltaTime)
 		velocity.y = -10.0f;
 	}
 
-	//if (velocity.magnitude() > maxSpeed)
-	//{
-	//	velocity = velocity.normalised() * maxSpeed;
-	//}
-
-	//prevPosition = m_transform.GetPosition();
 	m_transform.Translate(velocity);
 
-	
-	//system("cls");
-	//std::cout << "COLLIDING WITH GROUND: " << collidingWithGround << std::endl;
-	//std::cout << "maxSpeedThisFrame " << maxSpeedThisFrame << std::endl;
-	//std::cout<< "speed: " << speed << std::endl;
-	//std::cout << "vel.y: "<< velocity.y << std::endl;
-	
 	switch (colourChoice)
 	{
 	case 0:
@@ -127,17 +111,6 @@ void Player::draw(aie::Renderer2D * a_2dRenderer)
 	}
 
 	a_2dRenderer->drawSpriteTransformed3x3(m_texture, (float*)m_transform.GetGlobalMatrix());
-
-	//Draw m_AABB
-	//m_2dRenderer->setRenderColour(255,0,0);
-	////top
-	//m_2dRenderer->drawLine(m_AABB.left, m_AABB.top, m_AABB.right, m_AABB.top);
-	////bottom
-	//m_2dRenderer->drawLine(m_AABB.left, m_AABB.bottom, m_AABB.right, m_AABB.bottom);
-	////right
-	//m_2dRenderer->drawLine(m_AABB.right, m_AABB.bottom, m_AABB.right, m_AABB.top);
-	////lef
-	//m_2dRenderer->drawLine(m_AABB.left, m_AABB.bottom, m_AABB.left, m_AABB.top);
 }
 
 void Player::OnCollision(GameObject * a_obj2)
@@ -156,12 +129,13 @@ void Player::OnCollision(GameObject * a_obj2)
 		velocity = Vector2(0.0f, 0.0f);
 		direction = Vector2(0.0f, 0.0f);
 		colourChoice = rand() % 4;
+		hasRestart = true;
 	}
 	else if (colour == a_obj2->getColour())
 	{
 		//set's box's ability to change colour to false
 		a_obj2->setBoolColour(false);
 	
-		//colourChoice = rand() % 4;
+		colourChoice = rand() % 4;
 	}
 }

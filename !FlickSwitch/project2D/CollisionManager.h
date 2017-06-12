@@ -1,5 +1,5 @@
 #pragma once
-#include "AABB.h"'
+#include "AABB.h"
 #include "GameObject.h"
 #include "DynamicArray.h"
 
@@ -26,10 +26,10 @@ public:
 	void UpdateCollisions()
 	{
 		//for all objects (i)
-		for (int i = 0; i < gameObjArray->getSize(); i++)
+		for (unsigned int i = 0; i < gameObjArray->getSize(); i++)
 		{
 			//for all other objects (j)
-			for (int j = i + 1; j < gameObjArray->getSize(); j++)
+			for (unsigned int j = i + 1; j < gameObjArray->getSize(); j++)
 			{
 				if ((*gameObjArray)[i]->getType() == "player" && (*gameObjArray)[j]->getType() == "box")
 				{

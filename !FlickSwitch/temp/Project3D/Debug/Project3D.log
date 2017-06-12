@@ -2,4 +2,5 @@
   Application3D.cpp
   Generating Code...
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-  Project3D.vcxproj -> C:\Users\s171068\Documents\!FlickSwitch\temp\Project3D\Debug\Project3D.exe
+  Project3D.vcxproj -> D:\Documents\C++\Code Design\BallnSquaresRepo\!FlickSwitch\temp\Project3D\Debug\Project3D.exe
+  Project3D.vcxproj -> D:\Documents\C++\Code Design\BallnSquaresRepo\!FlickSwitch\temp\Project3D\Debug\Project3D.pdb (Full PDB)
