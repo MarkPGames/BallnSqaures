@@ -23,6 +23,7 @@ Box::Box(aie::Texture * a_texture, Vector2 a_position) : GameObject(a_texture, a
 	topLeft.y = topRight.y;
 	linePos1 = topLeft;
 	linePos2 = topRight;
+	linePos3 = Vector2(linePos1.x, linePos1.y - m_radius);
 	timer = 0.0f;
 }
 
@@ -41,6 +42,10 @@ void Box::update(float deltaTime)
 			{
 				colourChoice = rand() % 4;
 			}
+		}
+		else
+		{
+			colourChoice = colourChoice;
 		}
 		timer = 0.0f;
 	}

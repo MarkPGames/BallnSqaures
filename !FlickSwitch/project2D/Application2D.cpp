@@ -34,7 +34,6 @@ bool Application2D::startup()
 	Box* boxStart = new Box(m_boxStartTexture, Vector2(500, 0));
 	boxStart->setBoolColour(false);
 	Box* currentBox = boxStart;
-
 	gameObjArray.Push(player);
 	gameObjArray.Push(boxStart);
 
@@ -142,8 +141,8 @@ void Application2D::update(float deltaTime)
 			
 		}
 		gameObjArray[0]->setHasRestart(false);
+		gameObjArray[1]->setColourChoice(gameObjArray[0]->getColourChoice());
 	}
-
 
 	collisionManager->UpdateCollisions();
 }

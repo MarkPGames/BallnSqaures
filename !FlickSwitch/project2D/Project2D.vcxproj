@@ -105,6 +105,7 @@
     <ClInclude Include="AABB.h" />
     <ClInclude Include="Application2D.h" />
     <ClInclude Include="Box.h" />
+    <ClInclude Include="CollisionInfo.h" />
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Player.h" />

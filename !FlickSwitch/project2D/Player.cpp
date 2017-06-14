@@ -1,7 +1,6 @@
 #include "Player.h"
 #include "Texture.h"
 #include "Input.h"
-#include <iostream>
 
 Player::Player()
 {
@@ -25,6 +24,7 @@ bool Player::startup()
 	gravity = Vector2(0.0f, -90.8f);
 	speed = 100.0f;
 
+
 	return true;
 }
 
@@ -32,12 +32,28 @@ void Player::update(float deltaTime)
 {	
 	if (input->wasKeyPressed(aie::INPUT_KEY_A))
 	{
-		direction = Vector2(-1.0f, 0.0f);
+		
+		if (left != true)
+		{
+			direction = Vector2(-1.0f, 0.0f);
+		}
+		else
+		{
+			direction = Vector2(0.0f, 0.0f);
+		}
+
 	}
 
 	if (input->wasKeyPressed(aie::INPUT_KEY_D))
 	{
-		direction = Vector2(1.0f, 0.0f);
+		if (left != true)
+		{
+			direction = Vector2(1.0f, 0.0f);
+		}
+		else
+		{
+			direction = Vector2(0.0f, 0.0f);
+		}
 	}
 	
 	float speedThisFrame = speed;
@@ -87,6 +103,21 @@ void Player::update(float deltaTime)
 	}
 
 	collidingWithGround = false;
+
+	if (getPosition().y < -2500.0f) {
+	//reset position back to top middle 
+		m_transform.SetPosition(Vector2(500, 500));
+		velocity = Vector2(0.0f, 0.0f);
+		direction = Vector2(0.0f, 0.0f);
+		colourChoice = rand() % 4;
+		hasRestart = true;
+
+
+		//increase difficulty?
+		//maxSpeed -= 2.5f;
+
+	}
+
 }
 
 void Player::draw(aie::Renderer2D * a_2dRenderer)
@@ -113,11 +144,8 @@ void Player::draw(aie::Renderer2D * a_2dRenderer)
 	a_2dRenderer->drawSpriteTransformed3x3(m_texture, (float*)m_transform.GetGlobalMatrix());
 }
 
-void Player::OnCollision(GameObject * a_obj2)
+void Player::OnCollision(GameObject * a_obj2, CollisionSide a_collisionSide)
 {
-	std::cout << "Player collided with " << a_obj2->getType() << std::endl;
-	std::cout << "Player colour: " << colourChoice << std::endl;
-
 	//should happen if you've hit top
 	m_transform.SetPosition(Vector2(m_transform.GetPosition().x, a_obj2->getLinePos1().y + 32));
 	
@@ -131,7 +159,7 @@ void Player::OnCollision(GameObject * a_obj2)
 		colourChoice = rand() % 4;
 		hasRestart = true;
 	}
-	else if (colour == a_obj2->getColour())
+	else if (colour == a_obj2->getColour() && a_obj2->getBoolColour() != false)
 	{
 		//set's box's ability to change colour to false
 		a_obj2->setBoolColour(false);

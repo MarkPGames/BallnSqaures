@@ -5,6 +5,7 @@
 #include "Renderer2D.h"
 #include "Input.h"
 #include "AABB.h"
+#include "CollisionInfo.h"
 
 enum class COLOUR
 {
@@ -31,13 +32,14 @@ public:
 	Vector2 getPosition();
 	Vector2 getLinePos1();
 	Vector2 getLinePos2();
+	Vector2 getLinePos3();
 	void setLinePos1(Vector2 a_linePos1);
 	void setLinePos2(Vector2 a_linePos2);
 
 	std::string getType();
 	const GameObject* getObject();
 
-	virtual void OnCollision(GameObject* a_obj2);
+	virtual void OnCollision(GameObject* a_obj2, CollisionSide a_collisionInfo);
 	void setCollision(bool a_collision);
 
 	float getRadius() const;
@@ -46,8 +48,12 @@ public:
 	void setBoolColour(bool a_boolColour);
 	bool getBoolColour();
 	COLOUR getColour();
+	int getColourChoice();
+	void setColourChoice(int a_colourChoice);
 	void setHasRestart(bool a_hasRestart);
 	bool getHasRestart();
+	void setLeft(bool a_left);
+	void setRight(bool a_right);
 
 
 protected:
@@ -55,8 +61,8 @@ protected:
 	Transform m_transform;
 
 	std::string objType;
-	bool collision, hasMoved, boolColour, hasRestart;
-	Vector2 linePos1, linePos2;
+	bool collision, boolColour, hasRestart, left, right;
+	Vector2 linePos1, linePos2, linePos3;
 
 	//circle collision
 	float m_radius;

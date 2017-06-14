@@ -8,6 +8,13 @@ GameObject::GameObject()
 	m_radius = 0.0f;
 	objType = "Unknown";
 	collision = false;
+	boolColour = true;
+	hasRestart = false;
+	srand(unsigned int(time(NULL)));
+	colourChoice = rand() % 4;
+	colourPrev = colourChoice;
+	left = false;
+	right = false;
 }
 
 GameObject::GameObject(aie::Texture * a_texture, Vector2 a_position)
@@ -22,6 +29,8 @@ GameObject::GameObject(aie::Texture * a_texture, Vector2 a_position)
 	srand(unsigned int(time(NULL)));
 	colourChoice = rand() % 4;
 	colourPrev = colourChoice;
+	left = false;
+	right =false;
 }
 
 
@@ -40,7 +49,7 @@ bool GameObject::startup()
 {
 	if (boolColour == false)
 	{
-		colourChoice = 5;
+		colourChoice = colourChoice;
 	}
 	else
 	{
@@ -75,6 +84,11 @@ Vector2 GameObject::getLinePos2()
 	return linePos2;
 }
 
+Vector2 GameObject::getLinePos3()
+{
+	return linePos3;
+}
+
 void GameObject::setLinePos1(Vector2 a_linePos1)
 {
 	linePos1 = a_linePos1;
@@ -95,7 +109,7 @@ const GameObject* GameObject::getObject()
 	return this;
 }
 
-void GameObject::OnCollision(GameObject * a_obj2)
+void GameObject::OnCollision(GameObject * a_obj2, CollisionSide a_collisionSide)
 {
 
 }
@@ -135,6 +149,16 @@ COLOUR GameObject::getColour()
 	return colour;
 }
 
+int GameObject::getColourChoice()
+{
+	return colourChoice;
+}
+
+void GameObject::setColourChoice(int a_colourChoice)
+{
+	colourChoice = a_colourChoice;
+}
+
 void GameObject::setHasRestart(bool a_hasRestart)
 {
 	hasRestart = a_hasRestart;
@@ -143,4 +167,14 @@ void GameObject::setHasRestart(bool a_hasRestart)
 bool GameObject::getHasRestart()
 {
 	return hasRestart;
+}
+
+void GameObject::setLeft(bool a_left)
+{
+	left = a_left;
+}
+
+void GameObject::setRight(bool a_right)
+{
+	right = a_right;
 }
